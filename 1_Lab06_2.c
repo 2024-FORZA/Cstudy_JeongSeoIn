@@ -1,27 +1,14 @@
-#10809
+#1037
 #include <stdio.h>
 
-int main() {
-	char s[100];
-	scanf("%s", &s);
-
-	int a[26];
-	for (int i = 0; i < 26; ++i) {
-		a[i] = -1;
-	}
-
-	int k = 0;
-	int i;
-
-	while (s[k]) {
-		i = s[k] - 97;
-		if (a[i] == -1) a[i] = k;
-		++k;
-	}
-
-	for (int i = 0; i < 26; ++i) {
-		printf("%d ", a[i]);
-	}
-
-	return 0;
+int main () {
+    int n, temp, max = 2, min = 1000000;
+    scanf("%d", &n);
+    while (n--) {
+        scanf("%d", &temp);
+        max = max < temp ? temp : max;
+        min = min > temp ? temp : min;
+    }
+    printf("%d", max * min);
+    return 0;
 }
