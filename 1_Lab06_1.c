@@ -1,23 +1,13 @@
-#2675
+#1547
 #include <stdio.h>
-
-int main() {
-	int t, r, j;
-	char s[20];
-
-	scanf("%d", &t);
-
-	for (int i = 0; i < t; ++i) {
-		scanf("%d %s", &r, &s);
-
-		j = 0;
-		while (s[j]) {
-			for (int k = 0; k < r; ++k) {
-				printf("%c", s[j]);
-			}
-			++j;
-		}
-		printf("\n");
+int main(){
+	int n, a, b, ball = 1;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++){
+		scanf("%d %d", &a, &b);
+		if (a == ball) ball = b;
+		else if (b == ball) ball = a;
 	}
+	printf("%d", ball);
 	return 0;
 }
